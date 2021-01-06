@@ -12,12 +12,14 @@
 		"test": "npm run lint && npm run karma-ci",
 		"build": "ui5 build -a --clean-dest",
 		"build-self-contained": "ui5 build self-contained -a --clean-dest",
-		"serve-dist": "ws --compress -d dist"
+		"serve-dist": "ws --compress -d dist",
+		"closure": "npx google-closure-compiler --js=./dist/resources/sap-ui-custom.js  --js_output_file=./dist/resources/sap-ui-custom-x.js --strict_mode_input=false --compilation_level=ADVANCED"
+    
 	},
-	"dependencies": {},
 	"devDependencies": {
 		"@ui5/cli": "^2.7.1",
 		"eslint": "^7.17.0",
+		"google-closure-compiler": "^20201207.0.0",
 		"karma": "^5.2.3",
 		"karma-chrome-launcher": "^3.1.0",
 		"karma-coverage": "^2.0.3",
